@@ -153,5 +153,33 @@
         for(int l = 0; l < array.length; l++){
             System.out.println(array[l]);
         }
+           //in an array there are positive and negative numbers, sum of those should be sorted like {2, 4, 5 , -1 , -5}
+//{-66, 11}, sort and print {11, 66} by noit considering sign of the number
+    public void sortSumOfPositiveAndNegativeElements(int[] array){
+        int[] sort = new int[2];
+        int pSum = 0;
+        int nSum = 0;
+        for(int i = 0; i < array.length; i++){
+            if(array[i] > 0){
+                pSum = pSum + array[i];
+                sort[0] = pSum;
+            } else {
+                nSum = nSum + array[i];
+                sort[1] = nSum;
+            }
+        }
+        for(int k = 0; k < sort.length; k++){
+            if(sort[k] < 0)
+                sort[k] = -(sort[k]);
+        }
+        for(int l = 0; l < sort.length - 1; l++){
+            if(sort[l] > sort[l+1]){
+                int temp = sort[l+1];
+                sort[l+1] = sort[l];
+                sort[l] = temp;
+            }
+            System.out.println(sort[l] +", "+ sort[l+1]);
+        }
+    }
     }
 
