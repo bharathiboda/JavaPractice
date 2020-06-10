@@ -182,4 +182,15 @@
         }
     }
     }
+// find if array has three consecutive numbers ex: 3, 4, 5
+ public void consecutiveNumbers(int[] array){
+        int count = 0;
+        for(int i = 0 ; i < array.length - 2; i++){
+            if(array[i]+1 == array[i+1] && array[i+1] + 1 == array[i+2]){
+                count++;
+                System.out.println(array[i] +", "+ array[i+1] +", " + array[i+2]);
+            }
+        }
+        System.out.println("there are " + count + " no of consecutive pairs in an given array");
+    }
 
