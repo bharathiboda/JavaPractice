@@ -193,4 +193,51 @@
         }
         System.out.println("there are " + count + " no of consecutive pairs in an given array");
     }
-
+ /**
+     * in the array find three consecutive numbers
+     * @param array
+     */
+    public void consecutiveNumbers(int[] array){
+        int count = 0;
+        for(int i = 0 ; i < array.length - 2; i++){
+            if(array[i]+1 == array[i+1] && array[i+1] + 1 == array[i+2]){
+                count++;
+                System.out.println(array[i] +", "+ array[i+1] +", " + array[i+2]);
+            }
+        }
+        System.out.println("there are " + count + " no of consecutive pairs in an given array");
+    }
+    /**
+     * WAP ex:100, find factors of number
+     * 1, 2, 4, in any case / should give me 0 so that is the factor
+     * take a for loop for the number start with 1
+     * if number%i is zero then that number is factor
+     * @param num
+     */
+    public void factorsOfNumber(int num){
+        for(int i = 1; i <= num/2; i++){
+            if(num % i == 0){
+                System.out.println(i);
+            }
+        }
+        System.out.println("All these are factors for " + num);;
+    }
+/**
+     * find odd factors of the given number
+     * ex: 99, find odd factors of a num
+     * same as the above find factors
+     * if factor/2 == 1 then consider
+     * @param num
+     */
+    public void oddFactorsOfNum(int num){
+      for(int i = 1; i < num/2; i++){
+          if(num%i == 0){
+              if(i == 1) {
+                  System.out.println(i);
+              } else if(i%2 == 1){
+                  System.out.println(i);
+              }
+          }
+      }
+        System.out.println("These are the odd factors of a number : " + num);
+    }
