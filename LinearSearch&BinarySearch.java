@@ -37,6 +37,7 @@ public class LinearSearch {
             if (element == sortedArray[length]) {
                 index = length;
             } else {
+            //if element is greater than element in the middle of the array then take right hand side of the array 
                 if (element > sortedArray[length]) {
                     for (int i = 0; i < length; i++) {
                         rightHalfArray[i] = sortedArray[(length) + i];
