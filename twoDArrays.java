@@ -157,6 +157,30 @@ public class TwoDArray {
         System.out.println("}");
 
     }
+    
+      /**
+     * two d array sort based up on the last element of the internal array
+     * {{2, 3, 4}, {4, 6, 1}, {8, 6, 2}}
+     * output: {{4, 6, 1}, {8, 6, 2}, {2, 3, 4}}
+     * @param array
+     */
+    public void sortBasedOnLastElement(int[][] array){
+       for(int i = 0; i < array.length - 1; i++){
+           int length = array[i].length - 1;
+           if(array[i][length] > array[i+1][length]){
+               int[][] temp = new int[array.length][array[i].length];
+               for(int k = 0; k < array[i].length; k++){
+                   temp[i+1][k] = array[i][k];
+                   array[i][k] = array[i + 1][k];
+                   array[i + 1][k] = temp[i+1][k];
+               }
+           }
+       }
+       for(int k = 0; k < array.length; k++) {
+           System.out.println(Arrays.toString(array[k]));
+       }
+    }
+
 
     public static void main(String[] args) {
         int[][] array = {{1, 9, 4}, {2, 7, 3}, {8, 5, 2}};
