@@ -181,6 +181,37 @@ public class TwoDArray {
        }
     }
 
+     /**
+     * This is to find the numbers in the given email id, remove duplicate elements and print sorted way
+     * @param email
+     */
+    public void numbersInEmail(String email) {
+        String[] afterEmail = email.split("@");
+        String nums = "";
+        for (int i = 0; i < afterEmail[0].length(); i++) {
+            if (48 <= afterEmail[0].charAt(i)) {
+                if (57 >= afterEmail[0].charAt(i)) {
+                    nums = nums + afterEmail[0].charAt(i);
+                }
+            }
+        }
+        //inserting unique elements into the array
+        int[] intArray = new int[uniqueLengthOfArray(nums)];
+        for (int k = 0, m = 0; k < nums.length(); k++) {
+            int count = 0;
+            int element = Integer.parseInt(nums.charAt(k) + "");
+            for (int l = k; l < nums.length(); l++) {
+                int nextElement = Integer.parseInt(nums.charAt(l) + "");
+                if (element == nextElement) {
+                    count++;
+                }
+            }
+            if (count == 1)
+                intArray[m++] = element;
+        }
+        System.out.println(Arrays.toString(sortArray(intArray)));
+        }
+
 
     public static void main(String[] args) {
         int[][] array = {{1, 9, 4}, {2, 7, 3}, {8, 5, 2}};
