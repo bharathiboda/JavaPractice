@@ -29,3 +29,25 @@
            System.out.println(twoDList.get(k).toString());
        }
     }
+
+ /**
+     * so first we will have list of employees
+     * so I create list of list of employees
+     * {{list1}, {list2},,,,,,}
+     * sort based up on the highest value of the inner array
+     * @param twoDlist
+     */
+    public void sortListOfList(List<List<PracticeEmployee>> twoDlist) {
+        for(int i = 1; i < twoDlist.size(); i++){
+            for(int j = 0 ; j < twoDlist.get(i).size(); j++){
+                if(twoDlist.get(i - 1).get(j).getId() > twoDlist.get(i).get(j).getId()){
+                    List<PracticeEmployee> temp1 = new ArrayList<>(twoDlist.get(i));
+                    List<PracticeEmployee> temp2 = new ArrayList<>(twoDlist.get(i - 1));
+                    twoDlist.set(i - 1, temp1);
+                    twoDlist.set(i, temp2);
+                }
+        }}
+        for(int k = 0; k < twoDlist.size(); k++) {
+            System.out.println(twoDlist.get(k).toString() + "\n");
+        }
+    }
